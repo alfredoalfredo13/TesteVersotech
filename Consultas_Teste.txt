@@ -47,7 +47,7 @@ SELECT
     COUNT(DISTINCT ip.ID_PEDIDO) AS pedidos
 FROM ITENS_PEDIDO ip
 JOIN PEDIDO p ON ip.ID_PEDIDO = p.ID_PEDIDO
-WHERE p.DATA_CANCELAMENTO IS NULL  -- Considera apenas pedidos não cancelados
+WHERE p.DATA_CANCELAMENTO IS NULL
 GROUP BY ip.ID_PRODUTO
 ORDER BY quantidade_vendida DESC, total_vendido DESC
 LIMIT 1;
